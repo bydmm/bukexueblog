@@ -19,6 +19,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
+
 gem 'jquery-rails'
 
 gem "therubyracer"
@@ -28,6 +33,11 @@ gem 'coderay'
 gem 'redcarpet'
 gem 'simple_form'
 gem 'highlight_js-rails'
+
+gem 'devise'
+gem 'cancan'
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
