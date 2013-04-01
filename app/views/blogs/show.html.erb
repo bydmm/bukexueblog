@@ -1,15 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @blog.title %>
-</p>
+<div class="page-header">
+  <h1><%= @blog.title %></h1>
+</div>
 
-<p>
-  <b>Content:</b>
-  <%= @blog.content %>
-</p>
-
+<div><%= @blog.content.html_safe %></div>
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>

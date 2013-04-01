@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+//= require highlight_js/highlight
+//= require highlight_js/languages/ruby
+
+$(document).ready(function() {
+  $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+});

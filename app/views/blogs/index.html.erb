@@ -1,24 +1,21 @@
-<h1>Listing blogs</h1>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @blogs.each do |blog| %>
-  <tr>
-    <td><%= blog.title %></td>
-    <td><%= blog.content %></td>
-    <td><%= link_to 'Show', blog %></td>
-    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-    <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Blog', new_blog_path %>
+  <div class="row">
+    <span class="span8">
+      <% @blogs.each do |blog| %>
+        <h2><%= link_to blog.title, blog %></h2>
+        <div><%= blog.content.html_safe %></div>
+        <div><%= link_to 'Show', blog %></div>
+        <div><%= link_to 'Edit', edit_blog_path(blog) %></div>
+        <div><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        <hr />
+      <% end %>
+    </span>
+    <span class="span4">
+      <h5>最新文章</h5>
+      <ul>
+        <% @blogs.each do |blog| %>
+          <li><%= link_to blog.title, blog %></li>
+        <% end %>
+      </ul>
+    </span>
+  </div>
+  <%= link_to 'New Blog', new_blog_path %>
