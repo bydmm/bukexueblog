@@ -1,0 +1,23 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+zh-CN:
+  breadcrumbs:
+    application:
+      index: "首页"
+    blogs:
+      index: "首页"
+      show: "Example"
+  helpers:
+    actions: "Actions"
+    links:
+      back: "Back"
+      cancel: "Cancel"
+      confirm: "Are you sure?"
+      destroy: "Delete"
+      new: "New"
+    titles:
+      edit: "Edit"
+      save: "Save"
+      new: "New"
+      delete: "Delete"
