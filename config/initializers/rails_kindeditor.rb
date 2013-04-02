@@ -9,6 +9,16 @@ RailsKindeditor.setup do |config|
   config.upload_flash_ext = %w[swf flv]
   config.upload_media_ext = %w[swf flv mp3 wav wma wmv mid avi mpg asf rm rmvb]
   config.upload_file_ext = %w[doc docx xls xlsx ppt htm html txt zip rar gz bz2]
+  config.items = [
+        'source', '|', 'code', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'cut', 'copy', 'paste',
+        'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+        'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+        'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+        'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+        'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
+        'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+        'anchor', 'link', 'unlink', '|', 'more'
+  ]
   # Porcess upload image size
   # eg: 1600x1600 => 800x800
   #     1600x800  => 800x400

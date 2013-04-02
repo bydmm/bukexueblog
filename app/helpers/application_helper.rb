@@ -19,5 +19,10 @@ module ApplicationHelper
     end
   end
   
+  def morebreak(text)
+    moshi = /\<\!\-\- more \-\-\>/
+    moshi.match(text).pre_match
+  end
+  
 end
 

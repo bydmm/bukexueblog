@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/bydmm/rails_kindeditor.git
+  revision: 6f734c3660abff2c9ead198f54c90c1545ef7776
+  specs:
+    rails_kindeditor (0.3.14)
+      carrierwave
+      mini_magick
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -96,9 +104,6 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
-    rails_kindeditor (0.3.14)
-      carrierwave
-      mini_magick
     railties (3.2.13)
       actionpack (= 3.2.13)
       activesupport (= 3.2.13)
@@ -159,7 +164,7 @@ DEPENDENCIES
   jquery-rails
   less-rails
   rails (= 3.2.13)
-  rails_kindeditor (~> 0.3.14)
+  rails_kindeditor!
   redcarpet
   sass-rails (~> 3.2.3)
   simple_form

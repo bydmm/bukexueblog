@@ -37,7 +37,7 @@ gem 'highlight_js-rails'
 gem 'devise'
 gem 'cancan'
 
-gem 'rails_kindeditor', '~> 0.3.14'
+gem 'rails_kindeditor', :git => "git://github.com/bydmm/rails_kindeditor.git"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

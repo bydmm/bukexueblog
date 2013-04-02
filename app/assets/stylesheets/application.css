@@ -12,3 +12,9 @@
  *= require_tree .
  *= require highlight_js/sunburst
  */
+.ke-icon-more {
+	background-image: url(../themes/default/default.gif);
+	background-position: 0px -672px;
+	width: 16px;
+	height: 16px;
+}

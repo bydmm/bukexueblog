@@ -24,3 +24,15 @@
 //= require highlight_js/languages/css
 
 hljs.initHighlightingOnLoad();
+
+// 自定义插件 #1
+KindEditor.lang({
+	more : '更多'
+});
+
+KindEditor.plugin('more', function(K) {
+	var self = this, name = 'more';
+	self.clickToolbar(name, function() {
+		self.insertHtml('<!-- more -->');
+	});
+});

@@ -21,8 +21,19 @@
 
 <div><%= @blog.content.html_safe %></div>
 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+<div>
+  <span><%= link_to '返回上页', blogs_path %></span>
+  <% if can? :edit, @blog %>
+  <span><%= link_to '编辑', edit_blog_path(@blog) %></span>
+  <% end %>
+  <% if can? :destroy, @book %>
+  <span>
+    <%= link_to '删除', @blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </span>
+  <% end %>
+</div>
+
+
 
 <hr />
 <!-- UY BEGIN -->
