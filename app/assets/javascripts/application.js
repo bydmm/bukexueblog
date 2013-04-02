@@ -12,11 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require kindeditor
 //= require twitter/bootstrap
 //= require_tree .
 //= require highlight_js/highlight
 //= require highlight_js/languages/ruby
+//= require highlight_js/languages/xml
+//= require highlight_js/languages/php
+//= require highlight_js/languages/objectivec
+//= require highlight_js/languages/javascript
+//= require highlight_js/languages/css
 
-$(document).ready(function() {
-  $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
-});
+hljs.initHighlightingOnLoad();
