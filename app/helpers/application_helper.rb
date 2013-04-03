@@ -21,7 +21,8 @@ module ApplicationHelper
   
   def morebreak(text)
     moshi = /\<\!\-\- more \-\-\>/
-    moshi.match(text).pre_match
+    pre = moshi.match(text).try(:pre_match)
+    pre = pre ? pre : text
   end
   
 end

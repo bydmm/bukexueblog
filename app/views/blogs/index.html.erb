@@ -21,12 +21,25 @@
     <% end %>
   </span>
   <span class="span4">
-    <h5>最新文章</h5>
-    <ul>
-      <% @blogs.each do |blog| %>
-        <li><%= link_to blog.title, blog %></li>
-      <% end %>
-    </ul>
+    
+    <div class="widgets">
+      <h5>最新文章</h5>
+      <ul>
+        <% @blogs.each do |blog| %>
+          <li><%= link_to blog.title, blog %></li>
+        <% end %>
+      </ul>      
+    </div>
+    
+    <div class="widgets">
+      <h5>标签</h5>
+      <ul>
+        <% Tag.all.each do |tag| %>
+          <li><%= link_to tag.name, "#" %></li>
+        <% end %>
+      </ul>      
+    </div>
+
   </span>
 </div>
 

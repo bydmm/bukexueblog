@@ -1,5 +1,13 @@
-<%= simple_form_for @blog do |f| %>
-  <%= f.input :title %>
-  <%= f.kindeditor :content, :filterMode => false, :window_onload => true %>
-  <%= f.button :submit %>
+<%= simple_form_for @blog do |blog_form| %>
+  <%= blog_form.input :title %>
+  <%= blog_form.association :tags %>
+  <div class="control-group">
+    <div class="controls">
+      <%= link_to '新建标签', new_tag_path, :target => "_blank " %>
+    </div>
+  </div>
+  <%= blog_form.kindeditor :content, :filterMode => false, :window_onload => true %>
+  <div class="btn-toolbar">
+    <%= blog_form.button :submit %>
+  </div>
 <% end %>

@@ -20,6 +20,7 @@
 </div>
 
 <div><%= @blog.content.html_safe %></div>
+<div><%= join_tags(@blog) %></div>
 
 <div>
   <span><%= link_to '返回上页', blogs_path %></span>
