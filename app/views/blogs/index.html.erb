@@ -42,12 +42,11 @@
         <% end %>
       </ul>      
     </div>
-
+    <% if can? :edit, @blog %>
     <div class="widgets blocks">
-      <% if can? :edit, @blog %>
       <%= link_to '新建博客', new_blog_path %>
-      <% end %>
     </div>
+    <% end %>
   </span>
 </div>
 
