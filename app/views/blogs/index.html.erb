@@ -21,6 +21,7 @@
         <hr />
       <% end %>
     </div>
+    
   </span>
   <span class="span4">
     
@@ -42,10 +43,11 @@
       </ul>      
     </div>
 
+    <div class="widgets blocks">
+      <% if can? :edit, @blog %>
+      <%= link_to '新建博客', new_blog_path %>
+      <% end %>
+    </div>
   </span>
 </div>
-
-<% if can? :edit, @blog %>
-<%= link_to '新建博客', new_blog_path %>
-<% end %>
 
