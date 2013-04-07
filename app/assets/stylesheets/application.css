@@ -13,7 +13,7 @@
  *= require highlight_js/sunburst
  */
 html body{
-  background-color:#d0d0d0;
+  background-image:url('bg1.jpg');
 }
 .ke-icon-more {
 	background-image: url(../themes/default/default.gif);
