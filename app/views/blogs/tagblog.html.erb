@@ -1,0 +1,52 @@
+<div class="row">
+  <span class="span8">
+    <div class="bloglist blocks">
+      <% if @blogs %>
+        <% @blogs.each do |blog| %>
+          <h2><%= link_to blog.title, blog %></h2>
+          <div><%= morebreak(blog.content).html_safe %></div>
+      
+          <div>
+            <% if can? :read, @blog %>
+            <span><%= link_to '显示全文', blog %></span>
+            <% end %>
+            <% if can? :edit, @blog %>
+            <span><%= link_to '编辑', edit_blog_path(blog) %></span>
+            <% end %>
+            <% if can? :destroy, @book %>
+            <span>
+              <%= link_to '删除', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </span>
+            <% end %>
+          </div>
+          <hr />
+        <% end %>
+      <% else %>
+        <h2>本条目暂无博客</h2>
+      <% end %>
+    </div>
+    
+  </span>
+  <span class="span4">
+    
+    <div class="widgets blocks">
+      <h5>最新文章</h5>
+      <ul>
+        <% if @blogs %>
+          <% @blogs.each do |blog| %>
+            <li><%= link_to blog.title, blog %></li>
+          <% end %>
+        <% else %>
+          <li>本条目暂无博客</li>
+        <% end %>
+      </ul>      
+    </div>
+    <%= render 'tags' %>
+    <% if can? :edit, @blog %>
+    <div class="widgets blocks">
+      <%= link_to '新建博客', new_blog_path %>
+    </div>
+    <% end %>
+  </span>
+</div>
+

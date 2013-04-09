@@ -3,7 +3,7 @@ class Blog < ActiveRecord::Base
   has_many :tags
   has_and_belongs_to_many :tags
   
-  def self.post(tag_name)
-    Tag.find_by_name(yag_name).try(:blogs)
+  def self.find_by_tag(tag_name)
+    Tag.find_by_name(tag_name).try(:blogs)
   end
 end

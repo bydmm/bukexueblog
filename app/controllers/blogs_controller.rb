@@ -4,10 +4,19 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.order('id DESC').all
 
     respond_to do |format|
       format.html # index.html.erb
+      format.json { render json: @blogs }
+    end
+  end
+  
+  def tagblog
+    @blogs = Blog.find_by_tag(params[:tag])
+    
+    respond_to do |format|
+      format.html # tagblog.html.erb
       format.json { render json: @blogs }
     end
   end

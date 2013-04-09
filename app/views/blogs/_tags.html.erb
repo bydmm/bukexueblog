@@ -1,0 +1,8 @@
+<div class="widgets blocks">
+  <h5>标签</h5>
+  <ul>
+    <% Tag.all.each do |tag| %>
+      <li><%= link_to tag.name, tagblog_path(tag.name) %></li>
+    <% end %>
+  </ul>      
+</div>

@@ -4,7 +4,10 @@ Bydmmblog::Application.routes.draw do
   devise_for :users
 
   resources :blogs
-
+  
+  match 'tagblog/:tag' => 'blogs#tagblog' , :as => :tagblog
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
