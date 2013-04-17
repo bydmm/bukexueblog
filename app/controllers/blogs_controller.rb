@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class BlogsController < ApplicationController
   load_and_authorize_resource
   add_breadcrumb :index, :root_path
@@ -5,7 +6,6 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @blogs = Blog.order('id DESC').all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @blogs }
@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
   
   def tagblog
     @blogs = Blog.find_by_tag(params[:tag])
-    
+    self.set_seo_meta(params[:tag],'1212','123213');
     respond_to do |format|
       format.html # tagblog.html.erb
       format.json { render json: @blogs }
@@ -25,6 +25,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1.json
   def show
     @blog = Blog.find(params[:id])
+    self.set_seo_meta(@blog.title, BlogsHelper.join_tags(@blog), @blog.title);
     add_breadcrumb @blog.title, blogs_path(@blog)
     respond_to do |format|
       format.html # show.html.erb

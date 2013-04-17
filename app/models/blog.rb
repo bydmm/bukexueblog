@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Blog < ActiveRecord::Base
   attr_accessible :content, :title, :tags, :tag_ids
   has_many :tags

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 RailsKindeditor.setup do |config|
 
   # Specify the subfolders in public directory.

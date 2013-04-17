@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Tag < ActiveRecord::Base
   belongs_to :blog
   attr_accessible :name, :blogs
