@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= @page_title %></title>
     <meta name="keywords" content="<%= @meta_keywords %>" />
-    <meta name="description" content="<%= @meta_description %>" />
+    <meta name="description" content="<%= @meta_description.html_safe %>" />
     
     <%= csrf_meta_tags %>
     

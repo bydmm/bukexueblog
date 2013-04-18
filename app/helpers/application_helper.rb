@@ -1,6 +1,12 @@
 # -*- encoding : utf-8 -*-
 module ApplicationHelper
   
+  def morebreak(text)
+    moshi = /\<\!\-\- more \-\-\>/
+    pre = moshi.match(text).try(:pre_match)
+    pre = pre ? pre : text
+  end
+  
   def markdown(text)
     options = {   
         :autolink => true, 
@@ -18,12 +24,6 @@ module ApplicationHelper
     def block_code(code, language)
       CodeRay.scan(code, language).div(:tab_width=>2)
     end
-  end
-  
-  def morebreak(text)
-    moshi = /\<\!\-\- more \-\-\>/
-    pre = moshi.match(text).try(:pre_match)
-    pre = pre ? pre : text
   end
   
 end

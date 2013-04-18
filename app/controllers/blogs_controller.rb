@@ -1,4 +1,5 @@
 # -*- encoding : utf-8 -*-
+
 class BlogsController < ApplicationController
   load_and_authorize_resource
   add_breadcrumb :index, :root_path
@@ -14,7 +15,7 @@ class BlogsController < ApplicationController
   
   def tagblog
     @blogs = Blog.find_by_tag(params[:tag])
-    self.set_seo_meta(params[:tag],'1212','123213');
+    self.set_seo_meta(params[:tag],'','');
     respond_to do |format|
       format.html # tagblog.html.erb
       format.json { render json: @blogs }
@@ -25,7 +26,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1.json
   def show
     @blog = Blog.find(params[:id])
-    self.set_seo_meta(@blog.title, BlogsHelper.join_tags(@blog), @blog.title);
+    self.set_seo_meta(@blog.title, BlogsHelper.join_tags(@blog), seo(@blog.content));
     add_breadcrumb @blog.title, blogs_path(@blog)
     respond_to do |format|
       format.html # show.html.erb
@@ -92,4 +93,12 @@ class BlogsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+    def seo(text)
+      moshi = /\<\!\-\- more \-\-\>/
+      pre = moshi.match(text).try(:pre_match)
+      pre = pre ? pre : text
+    end
+    
 end
