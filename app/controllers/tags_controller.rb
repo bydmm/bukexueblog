@@ -46,7 +46,7 @@ class TagsController < ApplicationController
 
     respond_to do |format|
       if @tag.save
-        format.html { redirect_to @tag, notice: 'Tag was successfully created.' }
+        format.html { redirect_to @tag, notice: '成功创建标签.' }
         format.json { render json: @tag, status: :created, location: @tag }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class TagsController < ApplicationController
 
     respond_to do |format|
       if @tag.update_attributes(params[:tag])
-        format.html { redirect_to @tag, notice: 'Tag was successfully updated.' }
+        format.html { redirect_to @tag, notice: '成功更新标签.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

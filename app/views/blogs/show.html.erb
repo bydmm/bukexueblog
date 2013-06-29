@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <div class="blocks blog">
   <div class="page-header">
-    <h1><%= @blog.title %></h1>
+    <h1><%= @blog.title %>
+      <small><%= join_tags(@blog) %></small>
+    </h1>
     <!-- JiaThis Button BEGIN -->
     <div class="jiathis_style" style="height:30px;" >
     	<span class="jiathis_txt">分享到：</span>
@@ -21,9 +21,8 @@
   </div>
 
   <div><%= @blog.content.html_safe %></div>
-  <div><%= join_tags(@blog) %></div>
 
-  <div>
+  <p>
     <span><%= link_to '返回上页', blogs_path %></span>
     <% if can? :edit, @blog %>
     <span><%= link_to '编辑', edit_blog_path(@blog) %></span>
@@ -33,7 +32,7 @@
       <%= link_to '删除', @blog, method: :delete, data: { confirm: 'Are you sure?' } %>
     </span>
     <% end %>
-  </div>
+  </p>
 
 
 
